@@ -90,7 +90,7 @@ clfs = compute_GMM_results(components, attributes)
 
 #------------------------------------------------------------
 # Plot the results
-fig = plt.figure(figsize=(5, 5))
+fig = plt.figure(figsize=(10, 10))
 fig.subplots_adjust(hspace=0.1, wspace=0.1)
 
 class_labels = []
@@ -196,24 +196,6 @@ for i in range(2):
         ax2.set_xlabel(r'$A$')
 
 
-    #------------------------------
-    # print table of means and medians directly to LaTeX format
-    print r"\begin{tabular}{|l|lllllll|}"
-    print r"   \hline"
-    for j in range(7):
-        print '   &', labels[j],
-    print r"\\"
-    print r"   \hline"
-
-    for j in range(Nclusters):
-        print "   %i " % (j + 1),
-        for k in range(7):
-            print " & $%.2f \pm %.2f$ " % (means[j, k], stdevs[j, k]),
-        print r"\\"
-
-    print r"\hline"
-    print r"\end{tabular}"
-
 #------------------------------------------------------------
 # Second figure
 fig = plt.figure(figsize=(10, 10))
@@ -271,4 +253,4 @@ if len(sys.argv) > 1 and sys.argv[1] == '--save':
         F.write(fmt % tuple(line[col] for col in line.dtype.names))
     F.close()
 
-plt.show()
+plt.savefig('LINEAR_single.png', format='png')
