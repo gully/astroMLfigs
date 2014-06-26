@@ -37,6 +37,10 @@ from sklearn.mixture import GMM
 from astroML.decorators import pickle_results
 from astroML.datasets import fetch_LINEAR_geneva
 
+import pandas as pd
+import mpld3
+from mpld3 import plugins
+
 #----------------------------------------------------------------------
 # This function adjusts matplotlib settings for a uniform feel in the textbook.
 # Note that with usetex=True, fonts are rendered with LaTeX.  This may
@@ -44,6 +48,29 @@ from astroML.datasets import fetch_LINEAR_geneva
 # you can set usetex to False.
 from astroML.plotting import setup_text_plots
 setup_text_plots(fontsize=16, usetex=False)
+
+css = """
+table
+{
+  border-collapse: collapse;
+}
+th
+{
+  color: #ffffff;
+  background-color: #000000;
+}
+td
+{
+  background-color: #cccccc;
+}
+table, th, td
+{
+  font-family:Arial, Helvetica, sans-serif;
+  border: 1px solid black;
+  text-align: right;
+}
+"""
+
 
 #------------------------------------------------------------
 # Get the Geneva periods data
@@ -202,55 +229,52 @@ fig = plt.figure(figsize=(10, 10))
 fig.subplots_adjust(left=0.11, right=0.95, wspace=0.3)
 
 attrs = ['skew', 'ug', 'iK', 'JK']
-labels = ['skew', '$u-g$', '$i-K$', '$J-K$']
+labs = ['skew', 'u-g', 'i-K', 'J-K']
 ylims = [(-1.8, 2.2), (0.6, 2.9), (0.1, 2.6), (-0.2, 1.2)]
 
+
 i=2
+
+N=6146
+df = pd.DataFrame(index=range(N))
+df['gi'] = data['gi']
+df['ug'] = data['ug']
+df['iK'] = data['iK']
+df['JK'] = data['JK']
+df['logP'] = data['logP']
+df['amp'] = data['amp']
+df['skew'] = data['skew']
+
+'''
+attributes = [('gi', 'logP'),
+              ('ug', 'gi', 'iK', 'JK', 'logP', 'amp', 'skew')]
+'''
+
+labels = []
+for j in range(N):
+    label = df.ix[[j], :].T
+    label.columns = ['Row {0}'.format(j)]
+    # .to_html() is unicode; so make leading 'u' go away with str()
+    labels.append(str(label.to_html()))
+
 ax = fig.add_subplot(111)
+'''
 ax.scatter(data['gi'][back], data[attrs[i]][back],
            c='gray', edgecolors='none', s=4, linewidths=0)
 ax.scatter(data['gi'][fore], data[attrs[i]][fore],
            c=color[fore], edgecolors='none', s=4, linewidths=0)
+'''
+points = ax.plot(df.gi, df.ug, 'o', color='b',
+                 mec='k', ms=5, mew=1, alpha=.2)
+                 
 ax.set_xlabel('$g-i$')
-ax.set_ylabel(labels[i])
+ax.set_ylabel('$u-g$')
 
 ax.set_xlim(-0.6, 2.1)
 ax.set_ylim(ylims[i])
 
-#------------------------------------------------------------
-# Save the results
-#
-# run the script as
-#
-#   >$ python fig_LINEAR_clustering.py --save
-#
-# to output the data file showing the cluster labels of each point
-import sys
-if len(sys.argv) > 1 and sys.argv[1] == '--save':
-    filename = 'cluster_labels.dat'
+tooltip = plugins.PointHTMLTooltip(points[0], labels,
+                                   voffset=10, hoffset=10, css=css)
+plugins.connect(fig, tooltip)
 
-    print "Saving cluster labels to %s" % filename
-
-    from astroML.datasets.LINEAR_sample import ARCHIVE_DTYPE
-    new_data = np.zeros(len(data),
-                        dtype=(ARCHIVE_DTYPE + [('2D_cluster_ID', 'i4'),
-                                                ('7D_cluster_ID', 'i4')]))
-
-    for name in data.dtype.names:
-        new_data[name] = data[name]
-    new_data['2D_cluster_ID'] = class_labels[0]
-    new_data['7D_cluster_ID'] = class_labels[1]
-
-    fmt = ('%.6f   %.6f   %.3f   %.3f   %.3f   %.3f   %.7f   %.3f   %.3f   '
-           '%.3f    %.2f     %i     %i      %s          %i              %i\n')
-
-
-    F = open(filename, 'w')
-    F.write('#    ra           dec       ug      gi      iK      JK     '
-            'logP       Ampl    skew      kurt    magMed    nObs  LCtype  '
-            'LINEARobjectID  2D_cluster_ID   7D_cluster_ID\n')
-    for line in new_data:
-        F.write(fmt % tuple(line[col] for col in line.dtype.names))
-    F.close()
-
-plt.savefig('LINEAR_single.png', format='png')
+mpld3.save_html(fig, '/Users/gully/Desktop/d3_fig_test2.html')
