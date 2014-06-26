@@ -43,7 +43,7 @@ from astroML.datasets import fetch_LINEAR_geneva
 # result in an error if LaTeX is not installed on your system.  In that case,
 # you can set usetex to False.
 from astroML.plotting import setup_text_plots
-setup_text_plots(fontsize=8, usetex=True)
+setup_text_plots(fontsize=16, usetex=False)
 
 #------------------------------------------------------------
 # Get the Geneva periods data
@@ -216,7 +216,7 @@ for i in range(2):
 
 #------------------------------------------------------------
 # Second figure
-fig = plt.figure(figsize=(5, 5))
+fig = plt.figure(figsize=(10, 10))
 fig.subplots_adjust(left=0.11, right=0.95, wspace=0.3)
 
 attrs = ['skew', 'ug', 'iK', 'JK']
