@@ -205,17 +205,17 @@ attrs = ['skew', 'ug', 'iK', 'JK']
 labels = ['skew', '$u-g$', '$i-K$', '$J-K$']
 ylims = [(-1.8, 2.2), (0.6, 2.9), (0.1, 2.6), (-0.2, 1.2)]
 
-for i in range(4):
-    ax = fig.add_subplot(221 + i)
-    ax.scatter(data['gi'][back], data[attrs[i]][back],
-               c='gray', edgecolors='none', s=4, linewidths=0)
-    ax.scatter(data['gi'][fore], data[attrs[i]][fore],
-               c=color[fore], edgecolors='none', s=4, linewidths=0)
-    ax.set_xlabel('$g-i$')
-    ax.set_ylabel(labels[i])
+i=2
+ax = fig.add_subplot(111)
+ax.scatter(data['gi'][back], data[attrs[i]][back],
+           c='gray', edgecolors='none', s=4, linewidths=0)
+ax.scatter(data['gi'][fore], data[attrs[i]][fore],
+           c=color[fore], edgecolors='none', s=4, linewidths=0)
+ax.set_xlabel('$g-i$')
+ax.set_ylabel(labels[i])
 
-    ax.set_xlim(-0.6, 2.1)
-    ax.set_ylim(ylims[i])
+ax.set_xlim(-0.6, 2.1)
+ax.set_ylim(ylims[i])
 
 #------------------------------------------------------------
 # Save the results
