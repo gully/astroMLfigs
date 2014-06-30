@@ -23,6 +23,7 @@ light-curve amplitude diagram for the same clusters are shown in the lower
 panels of figure 10.20.
 """
 # Author: Jake VanderPlas
+# Edited by MGS on Thursday June 26, 2014
 # License: BSD
 #   The figure produced by this code is published in the textbook
 #   "Statistics, Data Mining, and Machine Learning in Astronomy" (2013)
@@ -117,7 +118,7 @@ clfs = compute_GMM_results(components, attributes)
 
 #------------------------------------------------------------
 # Plot the results
-fig = plt.figure(figsize=(10, 10))
+fig = plt.figure(figsize=(6, 6))
 fig.subplots_adjust(hspace=0.1, wspace=0.1)
 
 class_labels = []
@@ -225,7 +226,7 @@ for i in range(2):
 
 #------------------------------------------------------------
 # Second figure
-fig = plt.figure(figsize=(10, 10))
+fig = plt.figure(figsize=(6, 6))
 fig.subplots_adjust(left=0.11, right=0.95, wspace=0.3)
 
 attrs = ['skew', 'ug', 'iK', 'JK']
@@ -264,11 +265,11 @@ ax.scatter(data['gi'][back], data[attrs[i]][back],
 ax.scatter(data['gi'][fore], data[attrs[i]][fore],
            c=color[fore], edgecolors='none', s=4, linewidths=0)
 '''
-points = ax.plot(df.gi, df.ug, 'o', color='b',
+points = ax.plot(df.gi, df.iK, 'o', color='b',
                  mec='k', ms=5, mew=1, alpha=.2)
                  
-ax.set_xlabel('$g-i$')
-ax.set_ylabel('$u-g$')
+ax.set_xlabel('g-i')
+ax.set_ylabel('i-K')
 
 ax.set_xlim(-0.6, 2.1)
 ax.set_ylim(ylims[i])
@@ -277,4 +278,4 @@ tooltip = plugins.PointHTMLTooltip(points[0], labels,
                                    voffset=10, hoffset=10, css=css)
 plugins.connect(fig, tooltip)
 
-mpld3.save_html(fig, '/Users/gully/Desktop/d3_fig_test2.html')
+mpld3.save_html(fig, '/Users/gully/Desktop/d3_fig_test3.html')
