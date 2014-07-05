@@ -7,4 +7,9 @@ The main enhancements will be aimed at:
 * visualization, e.g. color, annotations
 * animation, e.g. how does the plot look for a variety of parameters
 * interactivity, e.g. user-editable parameters
-* d3.js or bokeh integration
+* explanatory or interactive material (ipython notebook, for examples)
+* d3.js or bokeh for the web
+
+enjoy,
+-gully
+
