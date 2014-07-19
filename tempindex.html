@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>astroMLfigs plus</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>astroML book figures <i>plus</i></h1>
+        <p>Enhanced Book figures from "Statistics, Data Mining, and Machine Learning in Astronomy"</p>
+
+        <p class="view"><a href="https://github.com/gully/astroMLfigs">View the Project on GitHub <small>gully/astroMLfigs</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/gully/astroMLfigs/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/gully/astroMLfigs/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/gully/astroMLfigs">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Enhanced astroML book figures.</h3>
+        <p>I'm hacking <a href="http://www.astroml.org/book_figures/">  figures </a> from the <a href="http://press.princeton.edu/titles/10159.html"> textbook </a> "Statistics, Data Mining, and Machine Learning in Astronomy"
+</p>
+
+	
+	<style>
+/* General menu styling */
+.nav {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	line-height: 22px;
+  
+}
+	
+	/* The main navigation link containers */
+	.nav>li {
+		display: block;
+		float: left; /* Displaying them on the same line */
+		margin: 0;
+		padding: 0;
+	}
+
+		/* The main navigation links */
+		.nav>li>a {
+			/* Layout */
+			display: block;
+			position: relative;
+			padding: 10px 20px;
+
+			/* Text */
+			font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
+			color: #fff;
+			font-size: 16px;
+			text-decoration: none;
+
+			/* Background */
+	background: black; /* For older browsers */
+	background: rgba(0, 0, 0, .6); /* Transparent background for modern browsers */
+			
+			/* Making the color to change on hover with a transition */
+			-webkit-transition: color .4s ease-in;
+			-moz-transition: color .4s ease-in;
+			-o-transition: color .4s ease-in;
+			-ms-transition: color .4s ease-in;
+		}
+
+		/* Changing the color on hover */
+		.nav>li>a:hover, .nav>li:hover>a {
+			color: #0fd0f9;
+		}
+
+		/* The links which contain dropdowns menu are wider, because they have a little arrow */
+		.nav>.dropdown>a {
+			padding: 10px 30px 10px 20px;
+		}
+
+		/* The arrow indicating the dropdown */
+		.dropdown>a::after {
+			 content: "";
+			 position: absolute;
+			 top: 17px;
+			 right: 10px;
+			 width: 7px;
+			 height: 7px;
+			 -webkit-transform: rotate(45deg);
+			 -ms-transform: rotate(45deg);
+			 -moz-transform: rotate(45deg);
+			 -o-transform: rotate(45deg);
+			 border-bottom: 1px solid #fff;
+			 border-right: 1px solid #fff;
+			}
+
+		/* Changing the color of the arrow on hover */	
+		.dropdown>a:hover::after, .dropdown:hover>a::after {
+			border-color: #0fd0f9;
+		}
+
+
+		/* The submenus */
+		.nav ul {
+			position: absolute;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: block;
+		}
+
+		/* General layout settings for the link containers of the submenus */
+		.nav ul li {
+			position: absolute;
+			top: -9999px; /* Hiding them */
+			height: 0px; 
+			display: block;
+			margin: 0;
+			padding: 0;
+
+			/* Making them to expand their height with a transition, for a slide effect */
+			-webkit-transition: height .2s ease-in;
+			-moz-transition: height .2s ease-in;
+			-o-transition: height .2s ease-in;
+			-ms-transition: height .2s ease-in;
+		}
+
+		/* Displays the submenu links, by expading their containers (with a transition, previously defined) and by repositioning them */
+		.dropdown:hover>ul>li {
+			height: 30px;
+			position: relative;
+			top: auto;
+		}
+
+			/* The submenu links */
+			.nav ul li a {
+				/* Layout */
+				padding: 4px 20px;
+				width: 200px;
+				display: block;
+				position: relative;
+
+				/* Text */
+				font-family: "Open Sans Condensed", Arial, Helvetica, sans-serif;
+				color: #bbb;
+				text-decoration: none;
+				font-size: 16px;
+				
+				/* Background & effects */
+				background: black;
+				background: rgba(0, 0, 0, .6);
+				-webkit-transition: color .3s ease-in, background .3s ease-in;
+				-moz-transition: color .3s ease-in, background .3s ease-in;
+				-o-transition: color .3s ease-in, background .3s ease-in;
+				-ms-transition: color .3s ease-in, background .3s ease-in;
+			}
+
+			/* Changing the link's color and background on hover */
+			.nav ul li:hover>a, .nav ul li a:hover {
+				color: #0fd0f9;
+				background: rgba(0, 0, 0, .75);
+			}
+
+
+</style>
+
+
+<ul class="nav">
+	<li class="dropdown">
+		<a href="#">Chapter 3</a>
+		<ul>
+			<li><a href="#">3.1: Venn Diagram</a></li>
+			<li><a href="#">3.2: Conditional Probability</a></li>
+			<li><a href="#">3.3: Prisoner's Dilemma</a></li>
+		</ul>
+	</li>
+<li class="dropdown">
+		<a href="#">Chapter 10</a>
+		<ul>
+			<li><a href="#">10.21: LINEAR w/ MPLD3</a></li>
+		</ul>
+	</li>
+</ul>
+
+<p><IMG SRC="images/LINEAR_single.png" ALT="astroML Figure from 10.21" align="center" height="400" width="400"> </p>   
+ 
+</section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/gully">gully</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
