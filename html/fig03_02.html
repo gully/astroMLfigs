@@ -1680,12 +1680,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1>
-Figure 3.2
-</h1>
-<h3>
-Joint and conditional probabilities
-</h3>
+<p><h1>Figure 3.2 </h1></p>
+<h3>Joint and conditional probabilities</h3>
 </div>
 </div>
 </div>
@@ -2120,9 +2116,7 @@ rgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA/4/T/Mz8tZKWl8AAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 align="center" > 
-The modified figure
-</h2>
+<h2 align="center" > The modified figure</h2>
 </div>
 </div>
 </div>
@@ -2131,7 +2125,19 @@ The modified figure
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This figure reminds me of Figure 2.2 of MacKay's <em>Inference</em> book: http://www.inference.phy.cam.ac.uk/itprnn/book.pdf There is a lot going on in this figure: * How to make an arbitraty, random 2D distribution, <span class="math">\(p(x,y)\)</span> * How to make a 2D histogram * How to share axes * How to put in a color bar * Complex subplot formatting * Discrete integrals along one dimension of an array * Concept of joint and conditional probabilities * Notation for joint probability and conditional probability</p>
+<p>This figure reminds me of Figure 2.2 of MacKay&#39;s <em>Inference</em> book: 
+<a href="http://www.inference.phy.cam.ac.uk/itprnn/book.pdf">http://www.inference.phy.cam.ac.uk/itprnn/book.pdf</a>
+There is a lot going on in this figure:</p>
+<ul>
+<li>How to make an arbitraty, random 2D distribution, $p(x,y)$</li>
+<li>How to make a 2D histogram</li>
+<li>How to share axes</li>
+<li>How to put in a color bar</li>
+<li>Complex subplot formatting</li>
+<li>Discrete integrals along one dimension of an array</li>
+<li>Concept of joint and conditional probabilities</li>
+<li>Notation for joint probability and conditional probability</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2157,7 +2163,9 @@ In&nbsp;[]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First, let's make the asymmetric distribution that will serve as <span class="math">\(p(x,y)\)</span>: <span class="math">\[\theta \sim \mathcal{N}(\mu, \sigma)\]</span> We will truncate the distribution where <span class="math">\(\theta &gt; \mid 2\sigma \mid\)</span>, by dividing the wings by 2.</p>
+<p>First, let&#39;s make the asymmetric distribution that will serve as $p(x,y)$:
+$$\theta \sim \mathcal{N}(\mu, \sigma)$$ 
+We will truncate the distribution where $\theta &gt; \mid 2\sigma \mid$, by dividing the wings by 2.</p>
 </div>
 </div>
 </div>
@@ -2385,7 +2393,11 @@ SZIkSZIkSZIkSZIkSZIkSTPX/weQCtq0ut8JewAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Next, make a parametric curve: <span class="math">\[r = \sqrt{\frac{1}{\mid \cos^2{\theta} - \sin^2{\theta}  \mid}} + \epsilon\]</span> <span class="math">\[x = r \cos{\theta + \pi/4}\]</span> <span class="math">\[y = r \sin{\theta + \pi/4}\]</span> <span class="math">\[\epsilon \sim \mathcal{N}(0, 0.08)\]</span></p>
+<p>Next, make a parametric curve:
+$$r = \sqrt{\frac{1}{\mid \cos^2{\theta} - \sin^2{\theta}  \mid}} + \epsilon$$
+$$x = r \cos{\theta + \pi/4}$$
+$$y = r \sin{\theta + \pi/4}$$
+$$\epsilon \sim \mathcal{N}(0, 0.08)$$</p>
 </div>
 </div>
 </div>
@@ -2433,10 +2445,10 @@ In&nbsp;[52]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I don't fully appreciate the detailed interplay of the terms in the parametric curve, but the basic gist is there-- you have a distribution on <span class="math">\(\theta\)</span>. You throw that into a function that calculates amplitudes based on theta. You noise up the amplitudes. The positions <span class="math">\((x,y)\)</span> depend on the (slightly noisy) amplitude, <span class="math">\(r\)</span>, and trigonometric functions of the <span class="math">\(\theta\)</span> parameter.</p>
-<p>One thing I don't understand is how the function includes the desired number of samples, <span class="math">\(N=10000\)</span>. <span class="math">\(N\)</span> doesn't seem to be a user-definable parameter.</p>
-<p>Recall that all of this is merely to generate synthetic data. In reality the data comes down from heaven and we just deal with it.</p>
-<p>Let's show just scatter plot, and then the &quot;Hess diagram&quot;, without any of the other stuff.</p>
+<p>I don&#39;t fully appreciate the detailed interplay of the terms in the parametric curve, but the basic gist is there-- you have a distribution on $\theta$. You throw that into a function that calculates amplitudes based on theta.  You noise up the amplitudes.  The positions $(x,y)$ depend on the (slightly noisy) amplitude, $r$, and trigonometric functions of the $\theta$ parameter.</p>
+<p>One thing I don&#39;t understand is how the function includes the desired number of samples, $N=10000$.  $N$ doesn&#39;t seem to be a user-definable parameter.  </p>
+<p>Recall that all of this is merely to generate synthetic data.  In reality the data comes down from heaven and we just deal with it.</p>
+<p>Let&#39;s show just scatter plot, and then the &quot;Hess diagram&quot;, without any of the other stuff.</p>
 </div>
 </div>
 </div>
@@ -3079,7 +3091,7 @@ HAAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Ok, the next step is to figure out the complex figure axis formatting and how to share axes. The key idea for the complex formatting is using the <em>rect</em> argument in the call to plt.axes(). Usually if you call plt.axes() you just get a full subplot filling the area. But if you give plt.axes() a 4 element tuple of normalized coordinates, it places the plot in a rectangle with (left, bottom, width, height).</p>
+<p>Ok, the next step is to figure out the complex figure axis formatting and how to share axes.  The key idea for the complex formatting is using the <em>rect</em> argument in the call to plt.axes().  Usually if you call plt.axes() you just get a full subplot filling the area.  But if you give plt.axes() a 4 element tuple of normalized coordinates, it places the plot in a rectangle with (left, bottom, width, height).  </p>
 </div>
 </div>
 </div>
@@ -3613,7 +3625,7 @@ SZIkSZIkSZIkSerHfwdRoSWhuEvHrQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So adding the plot values and color bars, and setting the x and y limits, get rid of the junk-looking colorbar. Although the color bar label is weird because it says: <span class="math">\(\times 10^{7-3}\)</span>. The right hand side panel still has labels on the y-axis, which I don't understand.</p>
+<p>So adding the plot values and color bars, and setting the x and y limits, get rid of the junk-looking colorbar.  Although the color bar label is weird because it says: $\times 10^{7-3}$.  The right hand side panel still has labels on the y-axis, which I don&#39;t understand.</p>
 </div>
 </div>
 </div>
@@ -4008,10 +4020,18 @@ AAAAAAAAAAAAAAAAAACk6P8DwwglJjeFnOkAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 align="center" > 
-Recap
-</h2>
-<p>Recap of what we learned from disecting this figure. * <strong>How to make an arbitraty, random 2D distribution, <span class="math">\(p(x,y)\)</span>,</strong> admittedly with some questions about how the parametric distribution was crafted in the first place * <strong>How to make a 2D histogram</strong>- this is easy with numpy's <em>histogram2d()</em> * <strong>How to share axes</strong>- really this is the same as complex subplot formatting. * <strong>How to put in a color bar</strong>- ditto, except there is a special command, <em>plt.colorbar()</em> * <strong>Complex subplot formatting</strong>- lots of this, main points are summarized in comments. * <strong>Discrete integrals along one dimension of an array.</strong> Easy with .sum(), with argument 0 or 1 for x or y, respectively. Similarly for higher dimensions. * <strong>Concept of joint and conditional probabilities</strong>- compare to the MacKay Figure 2.2. * <strong>Notation for joint probability and conditional probability</strong>- I prefer the cumbersome albeit explicit notation of p( x | y = 0.5 ) rather than p( x | 0.5 ). I guess really it should be symmetric, and the arguments should be statements, not variables: p( x = a | y = 0.5 ), where a is a variable in a specified domain.</p>
+<p><h2 align="center" > Recap</h2>
+Recap of what we learned from disecting this figure.</p>
+<ul>
+<li><strong>How to make an arbitraty, random 2D distribution, $p(x,y)$,</strong> admittedly with some questions about how the parametric distribution was crafted in the first place</li>
+<li><strong>How to make a 2D histogram</strong>- this is easy with numpy&#39;s <em>histogram2d()</em></li>
+<li><strong>How to share axes</strong>- really this is the same as complex subplot formatting.</li>
+<li><strong>How to put in a color bar</strong>- ditto, except there is a special command, <em>plt.colorbar()</em></li>
+<li><strong>Complex subplot formatting</strong>- lots of this, main points are summarized in comments.</li>
+<li><strong>Discrete integrals along one dimension of an array.</strong>  Easy with .sum(), with argument 0 or 1 for x or y, respectively.  Similarly for higher dimensions.</li>
+<li><strong>Concept of joint and conditional probabilities</strong>- compare to the MacKay Figure 2.2.</li>
+<li><strong>Notation for joint probability and conditional probability</strong>- I prefer the cumbersome albeit explicit notation of p( x | y = 0.5 ) rather than p( x | 0.5 ).  I guess really it should be symmetric, and the arguments should be statements, not variables: p( x = a | y = 0.5 ), where a is a variable in a specified domain.</li>
+</ul>
 </div>
 </div>
 </div>
